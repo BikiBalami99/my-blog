@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Card from "./subComponents/Card";
+import { DATA_URL } from "../utils";
 
 export default function Posts() {
   const [allPosts, setAllPosts] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:3000/posts")
+    fetch(`${DATA_URL}/posts`)
       .then((response) => {
         if (response.ok) {
           return response.json();
