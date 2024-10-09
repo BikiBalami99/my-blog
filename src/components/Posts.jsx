@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Card from "./subComponents/Card";
+import CardPosts from "./subComponents/CardPosts";
 import { DATA_URL } from "../utils";
 
 export default function Posts() {
@@ -25,7 +25,7 @@ export default function Posts() {
         <div className="card-grid">
           {allPosts.length > 0 &&
             allPosts.map((post) => {
-              return <Card key={post.id} post={post} />;
+              return <CardPosts key={post.id} post={post} />;
             })}
         </div>
       </div>

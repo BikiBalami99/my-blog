@@ -52,20 +52,22 @@ export default function Post() {
 
   return (
     <>
-      <div className="container">
-        <h1 className="page-title">{post && post.title}</h1>
-        <span className="page-subtitle">
-          By: <a href="user.html">{author && author.name}</a>
-        </span>
-        <div>{post.body}</div>
-        <h3 className="mt-4 mb-2">Comments</h3>
-        <div className="card-stack">
-          {comments.length > 0 &&
-            comments.map((eachComment) => {
-              return <Comment key={eachComment.id} comment={eachComment} />;
-            })}
+      {author && (
+        <div className="container">
+          <h1 className="page-title">{post && post.title}</h1>
+          <span className="page-subtitle">
+            By: <a href={`/users/${author.id}`}>{author && author.name}</a>
+          </span>
+          <div>{post.body}</div>
+          <h3 className="mt-4 mb-2">Comments</h3>
+          <div className="card-stack">
+            {comments.length > 0 &&
+              comments.map((eachComment) => {
+                return <Comment key={eachComment.id} comment={eachComment} />;
+              })}
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }

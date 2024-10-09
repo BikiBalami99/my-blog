@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Card from "./subComponents/Card";
+import CardUsers from "./subComponents/CardUsers";
 import { DATA_URL } from "../utils";
 
 export default function Users() {
@@ -22,24 +22,10 @@ export default function Users() {
       <div className="container">
         <h1 className="page-title">Users</h1>
         <div className="card-grid">
-          {allUsers.length > 0 &&
-            allUsers.map((user) => (
-              <Card
-                key={user.id}
-                post={{
-                  body: (
-                    <>
-                      {user.company.name}
-                      <br />
-                      {user.website}
-                      <br />
-                      {user.email}
-                    </>
-                  ),
-                  title: user.name,
-                }}
-              />
-            ))}
+          {allUsers.length &&
+            allUsers.map((user) => {
+              return <CardUsers key={user.id} user={user} />;
+            })}
         </div>
       </div>
     </>
