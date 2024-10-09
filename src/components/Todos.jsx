@@ -3,20 +3,6 @@ import React from "react";
 export default function Todos() {
   return (
     <>
-      <nav className="top-nav">
-        <div className="nav-text-large">My App</div>
-        <ul className="nav-list">
-          <li>
-            <a href="posts.html">Posts</a>
-          </li>
-          <li>
-            <a href="users.html">Users</a>
-          </li>
-          <li>
-            <a href="todos.html">Todos</a>
-          </li>
-        </ul>
-      </nav>
       <div className="container">
         <h1 className="page-title">Todos</h1>
         <ul>

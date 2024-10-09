@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
-    <nav>
-      <ul>
+    <nav className="top-nav">
+      <div className="nav-text-large">My App</div>
+      <ul className="nav-list">
         <li>
           <Link to="/posts">Posts</Link>
         </li>
